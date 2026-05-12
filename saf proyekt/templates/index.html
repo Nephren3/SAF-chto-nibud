@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAF map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map { height: 600px; width: 100%; background: gray; }
+        body { font-family: sans-serif; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Карта</h1>
+    <div id="map"></div>
+    <p> Нажми на точку</p>
+    <script scr="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([48, 67], 4);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        // Flask сам вставит данные из Python прямо сюда:
+        var regions = {{ regions|tojson }};
+
+        regions.forEach(function(reg) {
+            var m = L.marker(reg.coords).addTo(map);
+            
+            // Простейшее всплывающее окно
+            m.bindPopup(`
+                <b>${reg.name}</b><br>
+                Сырье: ${reg.oil} тонн<br>
+                <b>Рейсов: ${Math.floor(reg.potential / 5)}</b>
+            `);
+        });
+    </script>
+    
+</body>
+</html>

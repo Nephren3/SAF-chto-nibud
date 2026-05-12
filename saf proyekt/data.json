@@ -1,0 +1,49 @@
+{
+    "regions": [
+        {
+            "id": "astana",
+            "name": "Акмолинская область",
+            "coords": [51.1694, 71.4491],
+            "oil": 450,
+            "othodi": 300,
+            "potential": 600,
+            "airport": "NQZ"
+        },
+        {
+            "id": "almaty",
+            "name": "Алматинская область",
+            "coords": [43.2389, 76.8897],
+            "oil": 800,
+            "othodi": 1500,
+            "potential": 1200,
+            "airport": "ALA"
+        },
+        {
+            "id": "atyrau",
+            "name": "Атырауская область",
+            "coords": [47.0945, 51.9238],
+            "oil": 150,
+            "othodi": 50,
+            "potential": 100,
+            "airport": "GUW"
+        },
+        {
+            "id": "shymkent",
+            "name": "Туркестанская область",
+            "coords": [42.3249, 69.5881],
+            "oil": 600,
+            "othodi": 400,
+            "potential": 750,
+            "airport": "CIT"
+        },
+        {
+            "id": "karaganda",
+            "name": "Карагандинская область",
+            "coords": [49.8019, 73.1021],
+            "oil": 300,
+            "othodi": 200,
+            "potential": 400,
+            "airport": "KGF"
+        }
+    ]
+}
